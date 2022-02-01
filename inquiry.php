@@ -22,37 +22,36 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.8/brython.js" integrity="sha256-rA89wPrTJJQFWJaZveKW8jpdmC3t5F9rRkPyBjz8G04=" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript" src="js/gather_data.js"></script>
         <script type="text/javascript" src="js/loading.js"></script>
     </head>
-    <body onload="brython(); createGameBoard(); createKeyboard();">
+    <body onload="brython();">
         <header>
             <h1>百人一首 WORDLE</h1>
         </header>
         
-        <div class="game-container">
-        </div>
+        <br>
         
-        <div class="keyboard-container">
-        </div>
-        
-        <div class="mordal" style="display: none" id="mordal">
-            <p></p>
-        </div>
-        
-        <div id="result" class="popup_wrap">
-            <input type="checkbox" id="result-trigger" class="trigger">
-            <div class="popup_overlay">
-                <label for="result-trigger" class="popup_trigger"></label>
-                <div class="popup_content">
-                    <h1 id="result-title" style="text-align: center"></h1>
-                    <a id="tweet" style="margin-left: 55%" target="_blank" rel="noopener noreferrer">結果をツイート</a>
-                <label for="result-trigger" class="close_btn">×</label>
+        <form>
+            <div class="inputs">
+                <label class="label">開発者へのメッセージ</label>
+                <br>
+                <p>バグのご報告やご要望、ご感想など、お気軽にお送りください。</p>
+                <textarea cols="33" rows="14" id="message" name="message" value=""></textarea>
             </div>
-        </div>        
+            
+            <div class="btn-area">
+                <input type="button" value="送信" onclick="load_for_message('send_message.php', 'message', get_device_data())">
+            </div>
+        </form>
+                        
+        <br>
+        <br>
+        <input type="button" onclick="history.back()" value="戻る">
         
-        <br>
-        <br>
+        <div id="loading" style="display:none;">
+            <div class="loadingMsg"></div>
+        </div>
         
         <!-- サイドメニュー -->
         <input type="checkbox" id="navTgl" class="trigger">

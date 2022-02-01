@@ -4,9 +4,37 @@ var GREEN = "#2cc258ab";
 var YELLOW = "#ecc72294";
 var GRAY = "#a3a2a287";
 
-cards = ["あきかぜに", "あきのたの", "あけぬれば", "あさぢふの", "あさぼらけ", "あしびきの", "あはぢしま", "あはれとも", "あひみての", "あふことの", "あまつかぜ", "あまのはら", "あらざらむ", "あらしふく", "ありあけの", "ありまやま", "いにしへの", "いまこむと", "いまはただ", "うかりける", "うらみわび", "おくやまに", "おとにきく", "おほえやま", "おほけなく", "おもひわび", "をぐらやま", "かくとだに", "かささぎの", "かぜそよぐ",  "きみがため", "きりぎりす", "こころにも", "こぬひとを", "このたびは", "こひすてふ", "これやこの", "さびしさに", "しのぶれど", "しらつゆに", "すみのえの", "せをはやみ", "たかさごの", "たちわかれ", "たまのをよ", "たれをかも", "ちぎりきな", "ちはやぶる", "つきみれば", "つくばねの", "ながからむ", "ながらへば", "なげきつつ", "なげけとて", "なつのよは", "なにはえの", "なにはがた", "はなさそふ", "はるすぎて", "はるのよの", "ひさかたの", "ひとはいさ", "ひともをし", "ふくからに", "ほととぎす", "みかきもり", "みかのはら", "みせばやな", "みちのくの", "みよしのの", "さびしさに", "しのぶれど", "しらつゆに", "すみのえの", "せをはやみ", "やすらはで", "やへむぐら", "やまがはに", "やまざとは", "ゆふされば", "ゆらのとを", "よのなかは", "よのなかよ", "よもすがら", "よをこめて", "わがいほは", "わがそでは", "わすらるる", "わすれじの", "わたのはら", "わびぬれば"]
+var cards = ["あきかぜに", "あきのたの", "あけぬれば", "あさぢふの", "あさぼらけ", "あしびきの", "あはぢしま", "あはれとも", "あひみての", "あふことの", "あまつかぜ", "あまのはら", "あらざらむ", "あらしふく", "ありあけの", "ありまやま", "いにしへの", "いまこむと", "いまはただ", "うかりける", "うらみわび", "おくやまに", "おとにきく", "おほえやま", "おほけなく", "おもひわび", "をぐらやま", "かくとだに", "かささぎの", "かぜそよぐ",  "きみがため", "きりぎりす", "こころにも", "こぬひとを", "このたびは", "こひすてふ", "これやこの", "さびしさに", "しのぶれど", "しらつゆに", "すみのえの", "せをはやみ", "たかさごの", "たちわかれ", "たまのをよ", "たれをかも", "ちぎりきな", "ちはやぶる", "つきみれば", "つくばねの", "ながからむ", "ながらへば", "なげきつつ", "なげけとて", "なつのよは", "なにはえの", "なにはがた", "はなさそふ", "はるすぎて", "はるのよの", "ひさかたの", "ひとはいさ", "ひともをし", "ふくからに", "ほととぎす", "みかきもり", "みかのはら", "みせばやな", "みちのくの", "みよしのの", "さびしさに", "しのぶれど", "しらつゆに", "すみのえの", "せをはやみ", "やすらはで", "やへむぐら", "やまがはに", "やまざとは", "ゆふされば", "ゆらのとを", "よのなかは", "よのなかよ", "よもすがら", "よをこめて", "わがいほは", "わがそでは", "わすらるる", "わすれじの", "わたのはら", "わびぬれば"]
 
-var TARGET_CARD = cards[Math.floor(Math.random() * cards.length)];
+class Random {
+    constructor(seed = 88675123) {
+        this.x = 123456789;
+        this.y = 362436069;
+        this.z = 521288629;
+        this.w = seed;
+    }
+    
+    // XorShift
+    next() {
+        const t = this.x ^ (this.x << 11);
+        this.x = this.y;
+        this.y = this.z;
+        this.z = this.w;
+        return this.w = (this.w ^ (this.w >>> 19)) ^ (t ^ (t >>> 8));
+    }
+    
+    // min 以上 max 以下の乱数を生成する
+    nextInt(min, max) {
+        const r = Math.abs(this.next());
+        return min + (r % (max + 1 - min));
+    }
+}
+
+var date = new Date();
+var seed = date.getYear() + date.getMonth() + date.getDay();
+var random = new Random(seed);
+  
+var TARGET_CARD = cards[random.nextInt(0, cards.length - 1)];
 
 function createGameBoard() {
     for (let i = 0; i < MAX_TURN; ++i) {
@@ -203,9 +231,11 @@ function alert(message) {
 }
 
 var is_game_over = false;
+var is_ended = false;
 var result = [];
 
 function showResult() {
+    is_ended = true;
     document.getElementById("result-title").innerHTML = (is_game_over ? "GAME OVER..." : "Congratulations!");
     var tweet = document.getElementById("tweet");
     tweet.href = "https://twitter.com/intent/tweet?text=百人一首Wordle%20" + (is_game_over ? "X" : String(result.length)) + "/" + "6%0a%0a";
@@ -226,6 +256,7 @@ function showResult() {
 
 function judge() {
     if (y != 0) return;
+    if (is_ended) return;
     var key = "";
     for(let j = 0; j < 5; ++j) {
         var ch = document.getElementById("game-tile"+String(x-1)+"-"+String(j)).children[0].children[0];
