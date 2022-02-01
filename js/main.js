@@ -243,7 +243,7 @@ function showResult() {
     document.getElementById("result-title").innerHTML = (is_game_over ? "GAME OVER…" : "Congratulations!");
     var tweet = document.getElementById("tweet");
     tweet.href = "https://twitter.com/intent/tweet?text=百人一首Wordle%20" + GAME_NUM + "%20%20" + (is_game_over ? "X" : String(result.length)) + "/" + "6%0a%0a";
-    var result_title = document.getElementById("result-title");
+    var result_text = document.getElementById("result-title");
     for (let i = 0; i < result.length; ++i) {
         var result_row = "";
         for (let j = 0; j < result[0].length; ++j) {
@@ -263,8 +263,11 @@ function showResult() {
         tweet.href += "%0a";
         var result_p = document.createElement("p");
         result_p.innerHTML = result_row;
-        result_title.after(result_p);
+        result_text.after(result_p);
+        result_text = result_p;
     }
+    var br = document.createElement("br");
+    result_text.after(br);
     tweet.href += "&url=https://hyakunin-isshu-wordle.herokuapp.com/%0a&hashtags=百人一首Wordle";
     setTimeout(function() {
         var result_trigger = document.getElementById("result-trigger");
