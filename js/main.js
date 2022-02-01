@@ -237,7 +237,7 @@ var result = [];
 
 function showResult() {
     is_ended = true;
-    document.getElementById("result-title").innerHTML = (is_game_over ? "GAME OVER..." : "Congratulations!");
+    document.getElementById("result-title").innerHTML = (is_game_over ? "GAME OVER…" : "Congratulations!");
     var tweet = document.getElementById("tweet");
     tweet.href = "https://twitter.com/intent/tweet?text=百人一首Wordle%20" + (is_game_over ? "X" : String(result.length)) + "/" + "6%0a%0a";
     for (let i = 0; i < result.length; ++i) {
@@ -306,7 +306,7 @@ function judge() {
     judged[x - 1] = true;
     
     if (is_correct) showResult();
-    if (result.length == MAX_TURN) {
+    else if (result.length == MAX_TURN) {
         is_game_over = true;
         showResult();
     }
