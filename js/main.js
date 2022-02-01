@@ -30,7 +30,8 @@ class Random {
     }
 }
 
-var date = new Date();
+var japan_standard_time = new Date().toLocaleString({timeZone: "Asia/Tokyo"});
+var date = new Date(japan_standard_time);
 var seed = date.getYear() + date.getMonth() + date.getDay();
 var random = new Random(seed);
   
