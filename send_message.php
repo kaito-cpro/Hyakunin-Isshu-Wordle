@@ -33,6 +33,8 @@
         <?php
             exec("export LANG=ja_JP.UTF-8");
             
+            echo "called";
+            
             $fp = fopen("message.txt", "w");
             fwrite($fp, $_POST['val']);
             fclose($fp);
