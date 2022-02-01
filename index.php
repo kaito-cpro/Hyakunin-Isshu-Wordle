@@ -1,0 +1,53 @@
+<html>
+<html lang="ja">
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-198118895-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-198118895-1');
+        </script>
+        <title>百人一首Wordle</title>
+        <meta charset="utf-8" name="viewport"
+              content="width=320,
+                       height=480,
+                       initial-scale=1.0,
+                       minimum-scale=1.0,
+                       maximum-scale=2.0,
+                       user-scalable=yes" />
+        <meta name="keywords" content="百人一首,Wordle,競技かるた" />
+        <link rel="stylesheet" href="style.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.8/brython.js" integrity="sha256-rA89wPrTJJQFWJaZveKW8jpdmC3t5F9rRkPyBjz8G04=" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+        <script type="text/javascript" src="js.js"></script>
+    </head>
+    <body onload="brython(); createGameBoard(); createKeyboard();">
+        <header>
+            <h1>百人一首 WORDLE</h1>
+        </header>
+        
+        <div class="game-container">
+        </div>
+        
+        <div class="keyboard-container">
+        </div>
+        
+        <div class="mordal" style="display: none" id="mordal">
+            <p></p>
+        </div>
+        
+        <div id="result" class="popup_wrap">
+            <input type="checkbox" id="result-trigger" class="trigger">
+            <div class="popup_overlay">
+                <label for="result-trigger" class="popup_trigger"></label>
+                <div class="popup_content">
+                    <h1 id="result-title" style="text-align: center"></h1>
+                    <a id="tweet" target="_blank" rel="noopener noreferrer">Twitterでシェア</a>
+                <label for="result-trigger" class="close_btn">×</label>
+            </div>
+        </div>        
+    </body>
+</html>

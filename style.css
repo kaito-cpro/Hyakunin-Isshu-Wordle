@@ -1,0 +1,173 @@
+html, body {
+	font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+}
+
+header {
+    height: 58px;
+    border-bottom: solid 1px;
+    width: 340px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h1 {
+	position: relative;
+	padding: 0.25em 0;
+	color: rgb(86 86 86);
+	font-family: 'alba';
+}
+
+.game-container {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+
+.game-tile {
+    position: relative;
+    display: inline-block;
+    margin: 2px 2px;
+    width: 36px;
+    height: 36px;
+    font-weight: bold;
+    border: solid 1.2px #28ae28;
+    cursor: default;
+    transform-style: preserve-3d;
+    transition: 1s;
+}
+.game-tile div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    /* for text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.game-tile p {
+    margin: 0;
+    text-align: center;
+    color: rgb(63, 62, 62);
+    font-size: 26px;
+}
+.front-tile {
+    z-index: 2;
+}
+.back-tile {
+    z-index: 1;
+}
+
+.keyboard-container {
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 5px;
+}
+
+.keyboard-tile {
+    display: inline-block;
+    margin: 2px 2px;
+    width: 28px;
+    height: 32px;
+    font-weight: bold;
+    background: #fefefeee;
+    border: solid 1px #848484;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.keyboard-tile p {
+    margin: 1px 0px;
+    text-align: center;
+    color: rgb(68 68 68);
+    font-size: 20px;
+    font-weight: 500;
+}
+.keyboard-tile:hover {
+    background: #bfe2e8;
+}
+
+.mordal {
+	position: absolute;
+    width: 180px;
+    height: 56px;
+    top: 30%;
+    left: calc(50% - 90px);
+    background: #566669;
+    border-radius: 5px;
+    z-index: 100;
+    animation: vibration 0.1s  0s;
+}
+.mordal p {
+    color: white;
+    text-align: center;
+    font-size: 16px;
+}
+
+@keyframes vibration {
+    0% {transform: translate(0px, 0px)}
+    25% {transform: translate(-2px, 0px)}
+    50% {transform: translate(0px, 0px)}
+    75% {transform: translate(2px, 0px)}
+    100% {transform: translate(0px, 0px)}
+}
+
+.popup_wrap input[type="checkbox"] {
+	display: none;
+}
+.popup_overlay {
+	display: flex;
+	justify-content: center;
+	overflow: auto;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 9998;
+	width: 100%;
+	height: 100%;
+	background: #aacbd191;
+	opacity: 0;
+	transition: opacity 0.2s, transform 0s 0.3s;
+	transform: scale(0);
+}
+.popup_trigger {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.popup_content {
+	position: fixed;
+	align-self: center;
+	width: 80%;
+	max-width: 800px;
+	max-height: 90%;
+	box-sizing: border-box;
+	background: rgb(255, 255, 255);
+	opacity: 1.0;
+	transition: 0.2s;
+	border-radius: 8px;
+	box-shadow: 0 0 8px rgba(39, 131, 206, 0.9);
+	overflow-y: auto;
+}
+.popup_content p{
+	padding: 3px 20px 0px;
+	text-align: center;
+  	line-height: 20px;
+  	margin: 3px 0px 3px;
+	color:rgb(0, 0, 0);
+	background-color: rgb(255, 255, 255);
+}
+.close_btn {
+	position: absolute;
+	top: 6px;
+	right: 6px;
+	font-size: 34px;
+	cursor: pointer;
+	color:#ff0000;
+}
+.popup_wrap input:checked ~ .popup_overlay {
+	opacity: 1;
+	transform: scale(1);
+	transition: opacity 0.5s;
+}
