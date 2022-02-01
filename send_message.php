@@ -37,13 +37,14 @@
             fwrite($fp, $_POST['val']);
             fclose($fp);
             
-            echo "called";
-            
             $command="python py/send_message.py";
+            echo "called";
             exec($command,$output,$rtn);           
+            echo "called";
             foreach ($output as $o) {
                 echo $o;
             }
+            echo "called";
         ?>
         
         <div id="loading" style="display:none;">
