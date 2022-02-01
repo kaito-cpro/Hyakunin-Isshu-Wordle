@@ -17,16 +17,15 @@
                        minimum-scale=1.0,
                        maximum-scale=2.0,
                        user-scalable=yes" />
-        <meta name="keywords" content="百人一首,Wordle,競技かるた" />
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="style.css"/>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.8/brython.js" integrity="sha256-rA89wPrTJJQFWJaZveKW8jpdmC3t5F9rRkPyBjz8G04=" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
         <script src="py/send_message.py"></script>
-        <script type="text/javascript" src="js/gather_data.js"></script>
         <script type="text/javascript" src="js/loading.js"></script>
+        <script type="text/javascript" src="js/gather_data.js?202106282227"></script>
     </head>
-    <body onload="brython();">
+    <body onload="brython()"> 
         <header>
             <h1>百人一首WORDLE</h1>
         </header>
@@ -37,13 +36,17 @@
             $fp = fopen("message.txt", "w");
             fwrite($fp, $_POST['val']);
             fclose($fp);
-            
+
             $command="python py/send_message.py";
             exec($command,$output,$rtn);           
             foreach ($output as $o) {
                 echo $o;
             }
         ?>
+        
+        <br>
+        <br>
+        <input type="button" onclick="history.back()" value="戻る">
         
         <div id="loading" style="display:none;">
             <div class="loadingMsg"></div>
