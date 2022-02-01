@@ -36,7 +36,9 @@
             $fp = fopen("message.txt", "w");
             fwrite($fp, $_POST['val']);
             fclose($fp);
-
+            
+            echo "called";
+            
             $command="python py/send_message.py";
             exec($command,$output,$rtn);           
             foreach ($output as $o) {

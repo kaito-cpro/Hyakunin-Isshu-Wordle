@@ -15,7 +15,7 @@ with open('message.txt') as f:
 
 if len(message) == 1:
     print("<p>1文字以上入力してください。</p>")
-    # print('''<div class="space"></div>''')
+    print('''<div class="space"></div>''')
     print('''<input type="button" onclick="history.back()" value="戻る">''')
     exit()
 
@@ -24,5 +24,5 @@ headers = {'Authorization': 'Bearer ' + line_notify_token}
 line_notify = requests.post(line_notify_api, data=payload, headers=headers)
 
 print("<p>メッセージの送信が完了しました。</p>")
-# print('''<div class="space"></div>''')
+print('''<div class="space"></div>''')
 print('''<input type="button" onclick="location.href='index.php';" value="OK">''')
