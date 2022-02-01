@@ -81,6 +81,7 @@ h1 {
 .keyboard-tile p {
     margin: 1px 0px;
     text-align: center;
+    line-height: 28px;
     color: rgb(68 68 68);
     font-size: 20px;
     font-weight: 500;
@@ -92,7 +93,7 @@ h1 {
 .mordal {
 	position: absolute;
     width: 180px;
-    height: 56px;
+    height: 60px;
     top: 30%;
     left: calc(50% - 90px);
     background: #566669;
@@ -103,6 +104,7 @@ h1 {
 .mordal p {
     color: white;
     text-align: center;
+    line-height: 60px;
     font-size: 16px;
 }
 

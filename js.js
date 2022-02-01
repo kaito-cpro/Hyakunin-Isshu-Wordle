@@ -102,6 +102,7 @@ function createKeyboard() {
     
     document.body.getElementsByClassName("keyboard-container")[0].appendChild(back_keyboard);
     
+    
     // 裏表切り替えキー
     var tile = document.createElement("div");
     tile.className = "keyboard-tile";
@@ -114,6 +115,12 @@ function createKeyboard() {
     tile.appendChild(ch);
     
     document.body.getElementsByClassName("keyboard-container")[0].appendChild(tile);
+    
+    // 余白埋め
+    var space = document.createElement("div");
+    space.style = "display:inline-block; width:154px; height:28px";
+    document.body.getElementsByClassName("keyboard-container")[0].appendChild(space);
+    
     
     // バックスペースキー
     var tile = document.createElement("div");
@@ -192,7 +199,7 @@ function alert(message) {
     mordal.style.display = "";
     setTimeout(function() {
         mordal.style.display = "none";
-    }, 2000);
+    }, 1500);
 }
 
 var is_game_over = false;
@@ -210,7 +217,7 @@ function showResult() {
         }
         tweet.href += "%0a";
     }
-    tweet.href += "%0a&url=https://hyakunin-isshu-wordle.herokuapp.com/%0a&hashtags=百人一首Wordle";
+    tweet.href += "&url=https://hyakunin-isshu-wordle.herokuapp.com/%0a&hashtags=百人一首Wordle";
     setTimeout(function() {
         var result_trigger = document.getElementById("result-trigger");
         result_trigger.checked = "checked";
