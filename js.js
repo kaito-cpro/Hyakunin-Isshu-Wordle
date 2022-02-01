@@ -1,13 +1,12 @@
 var MAX_TURN = 6;
 
 var GREEN = "#2cc258ab";
-var YELLOW = "#e2cc2d87";
-var GRAY = "#b3b3b387";
+var YELLOW = "#ecc72294";
+var GRAY = "#a3a2a287";
 
 cards = ["あきかぜに", "あきのたの", "あけぬれば", "あさぢふの", "あさぼらけ", "あしびきの", "あはぢしま", "あはれとも", "あひみての", "あふことの", "あまつかぜ", "あまのはら", "あらざらむ", "あらしふく", "ありあけの", "ありまやま", "いにしへの", "いまこむと", "いまはただ", "うかりける", "うらみわび", "おくやまに", "おとにきく", "おほえやま", "おほけなく", "おもひわび", "をぐらやま", "かくとだに", "かささぎの", "かぜそよぐ",  "きみがため", "きりぎりす", "こころにも", "こぬひとを", "このたびは", "こひすてふ", "これやこの", "さびしさに", "しのぶれど", "しらつゆに", "すみのえの", "せをはやみ", "たかさごの", "たちわかれ", "たまのをよ", "たれをかも", "ちぎりきな", "ちはやぶる", "つきみれば", "つくばねの", "ながからむ", "ながらへば", "なげきつつ", "なげけとて", "なつのよは", "なにはえの", "なにはがた", "はなさそふ", "はるすぎて", "はるのよの", "ひさかたの", "ひとはいさ", "ひともをし", "ふくからに", "ほととぎす", "みかきもり", "みかのはら", "みせばやな", "みちのくの", "みよしのの", "さびしさに", "しのぶれど", "しらつゆに", "すみのえの", "せをはやみ", "やすらはで", "やへむぐら", "やまがはに", "やまざとは", "ゆふされば", "ゆらのとを", "よのなかは", "よのなかよ", "よもすがら", "よをこめて", "わがいほは", "わがそでは", "わすらるる", "わすれじの", "わたのはら", "わびぬれば"]
 
-// var TARGET_CARD = cards[Math.floor(Math.random() * cards.length)];
-var TARGET_CARD = "あひみての";
+var TARGET_CARD = cards[Math.floor(Math.random() * cards.length)];
 
 function createGameBoard() {
     for (let i = 0; i < MAX_TURN; ++i) {
@@ -47,19 +46,19 @@ hiraganas1 = [["あ", "か", "さ", "た", "な", "は", "ま", "や", "ら", "�
               ["う", "く", "す", "つ", "ぬ", "ふ", "む", "ゆ", "る", "を"],
               ["え", "け", "せ", "て", "ね", "へ", "め", "　", "れ", "　"],
               ["お", "こ", "そ", "と", "の", "ほ", "も", "よ", "ろ", "ん"]]
-hiraganas2 = [["が", "ざ", "だ", "ば"],
-              ["ぎ", "じ", "ぢ", "び"],
-              ["ぐ", "ず", "づ", "ぶ"],
-              ["げ", "ぜ", "で", "べ"],
-              ["ご", "ぞ", "ど", "ぼ"]]
+hiraganas2 = [["が", "　", "ざ", "　", "だ", "　", "ば"],
+              ["ぎ", "　", "じ", "　", "ぢ", "　", "び"],
+              ["ぐ", "　", "ず", "　", "づ", "　", "ぶ"],
+              ["げ", "　", "ぜ", "　", "で", "　", "べ"],
+              ["ご", "　", "ぞ", "　", "ど", "　", "ぼ"]]
 
 function createKeyboard() {
     // 表面のキーボード
     var front_keyboard = document.createElement("div");
     front_keyboard.id = "front-keyboard";
     
-    for (let i = 0; i < 5; ++i) {
-        for (let j = 0; j < 10; ++j) {
+    for (let i = 0; i < hiraganas1.length; ++i) {
+        for (let j = 0; j < hiraganas1[0].length; ++j) {
             var tile = document.createElement("div");
             tile.className = "keyboard-tile";
             tile.id = "front-keyboard-tile" + String(i) + "-" + String(j);
@@ -83,8 +82,8 @@ function createKeyboard() {
     back_keyboard.id = "back-keyboard";
     back_keyboard.style.display = "none";
                  
-    for (let i = 0; i < 5; ++i) {
-        for (let j = 0; j < 4; ++j) {
+    for (let i = 0; i < hiraganas2.length; ++i) {
+        for (let j = 0; j < hiraganas2[0].length; ++j) {
             var tile = document.createElement("div");
             tile.className = "keyboard-tile";
             tile.id = "back-keyboard-tile" + String(i) + "-" + String(j);
@@ -111,7 +110,7 @@ function createKeyboard() {
     tile.setAttribute("onclick", "changeMode()");
     
     var ch = document.createElement("p");
-    ch.innerHTML = "↺";
+    ch.innerHTML = "切替";
     tile.appendChild(ch);
     
     document.body.getElementsByClassName("keyboard-container")[0].appendChild(tile);
@@ -124,7 +123,7 @@ function createKeyboard() {
     tile.setAttribute("onclick", "erase()");
     
     var ch = document.createElement("p");
-    ch.innerHTML = "↩";
+    ch.innerHTML = "消す";
     tile.appendChild(ch);
     
     document.body.getElementsByClassName("keyboard-container")[0].appendChild(tile);

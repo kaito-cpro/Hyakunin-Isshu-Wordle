@@ -50,8 +50,9 @@ h1 {
 .game-tile p {
     margin: 0;
     text-align: center;
-    color: rgb(63, 62, 62);
+    color: rgb(74, 72, 72);
     font-size: 26px;
+    font-weight: 500;
 }
 .front-tile {
     z-index: 2;
@@ -70,7 +71,7 @@ h1 {
     display: inline-block;
     margin: 2px 2px;
     width: 28px;
-    height: 32px;
+    height: 30px;
     font-weight: bold;
     background: #fefefeee;
     border: solid 1px #848484;
