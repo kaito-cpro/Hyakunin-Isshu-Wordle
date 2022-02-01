@@ -34,7 +34,10 @@ var japan_standard_time = new Date().toLocaleString({timeZone: "Asia/Tokyo"});
 var date = new Date(japan_standard_time);
 var seed = date.getYear() + date.getMonth() + date.getDay();
 var random = new Random(seed);
-  
+
+var init_date = new Date(2022, 2, 1);  // ゲーム公開日
+var GAME_NUM = parseInt((date - init_date) / 1000 / 60 / 60 / 24);  // 何回目の Wordle か
+
 var TARGET_CARD = cards[random.nextInt(0, cards.length - 1)];
 
 function createGameBoard() {
@@ -239,14 +242,28 @@ function showResult() {
     is_ended = true;
     document.getElementById("result-title").innerHTML = (is_game_over ? "GAME OVER…" : "Congratulations!");
     var tweet = document.getElementById("tweet");
-    tweet.href = "https://twitter.com/intent/tweet?text=百人一首Wordle%20" + (is_game_over ? "X" : String(result.length)) + "/" + "6%0a%0a";
+    tweet.href = "https://twitter.com/intent/tweet?text=百人一首Wordle%20" + GAME_NUM + "%20%20" + (is_game_over ? "X" : String(result.length)) + "/" + "6%0a%0a";
+    var result_title = document.getElementById("result-title");
     for (let i = 0; i < result.length; ++i) {
+        var result_row = "";
         for (let j = 0; j < result[0].length; ++j) {
-            if (result[i][j] == 0) tweet.href += "🟩";
-            else if (result[i][j] == 1) tweet.href += "🟨";
-            else if (result[i][j] == 2) tweet.href += "⬛";
+            if (result[i][j] == 0) {
+                tweet.href += "🟩";
+                result_row += "🟩";
+            }
+            else if (result[i][j] == 1) {
+                tweet.href += "🟨";
+                result_row += "🟨";
+            }
+            else if (result[i][j] == 2) {
+                tweet.href += "⬛";
+                result_row += "⬛";
+            }
         }
         tweet.href += "%0a";
+        var result_p = document.createElement("p");
+        result_p.innerHTML = result_row;
+        result_title.after(result_p);
     }
     tweet.href += "&url=https://hyakunin-isshu-wordle.herokuapp.com/%0a&hashtags=百人一首Wordle";
     setTimeout(function() {

@@ -50,7 +50,7 @@
             <input type="checkbox" id="result-trigger" class="trigger">
             <div class="popup_overlay">
                 <label for="result-trigger" class="popup_trigger"></label>
-                <div class="popup_content">
+                <div id="result-content" class="popup_content">
                     <h1 id="result-title" style="text-align: center"></h1>
                     <a id="tweet" style="margin-left: 55%" target="_blank" rel="noopener noreferrer">結果をツイート</a>
                 <label for="result-trigger" class="close_btn">×</label>
