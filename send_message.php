@@ -24,6 +24,7 @@
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
         <script type="text/javascript" src="js/gather_data.js"></script>
         <script type="text/javascript" src="js/loading.js"></script>
+        <script src="py/send_message.py"></script>
     </head>
     <body onload="brython();">
         <header>
@@ -38,13 +39,10 @@
             fclose($fp);
             
             $command="python py/send_message.py";
-            echo "called";
             exec($command,$output,$rtn);           
-            echo "called";
             foreach ($output as $o) {
                 echo $o;
             }
-            echo "called";
         ?>
         
         <div id="loading" style="display:none;">
