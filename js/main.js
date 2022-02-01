@@ -34,7 +34,8 @@ var date = new Date();
 var seed = date.getYear() + date.getMonth() + date.getDay();
 var random = new Random(seed);
   
-var TARGET_CARD = cards[random.nextInt(0, cards.length - 1)];
+// var TARGET_CARD = cards[random.nextInt(0, cards.length - 1)];
+var TARGET_CARD = "ちはやぶる";
 
 function createGameBoard() {
     for (let i = 0; i < MAX_TURN; ++i) {
