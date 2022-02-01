@@ -242,29 +242,40 @@ function showResult() {
     is_ended = true;
     document.getElementById("result-title").innerHTML = (is_game_over ? "GAME OVER…" : "Congratulations!");
     var tweet = document.getElementById("tweet");
-    tweet.href = "https://twitter.com/intent/tweet?text=百人一首Wordle%20" + GAME_NUM + "%20%20" + (is_game_over ? "X" : String(result.length)) + "/" + "6%0a%0a";
+    tweet.href = "https://twitter.com/intent/tweet?text=百人一首Wordle-" + GAME_NUM + "%20%20" + (is_game_over ? "X" : String(result.length)) + "/" + "6%0a%0a";
     var result_text = document.getElementById("result-title");
     for (let i = 0; i < result.length; ++i) {
         var result_row = "";
         for (let j = 0; j < result[0].length; ++j) {
             if (result[i][j] == 0) {
                 tweet.href += "🟩";
-                result_row += "🟩";
+                var tile = document.createElement("div");
+                tile.className = "mini-tile";
+                tile.style = "background: GREEN";
+                result_row.after(tile);
+                result_row = tile;
             }
             else if (result[i][j] == 1) {
                 tweet.href += "🟨";
-                result_row += "🟨";
+                var tile = document.createElement("div");
+                tile.className = "mini-tile";
+                tile.style = "background: YELLOW";
+                result_row.after(tile);
+                result_row = tile;
             }
             else if (result[i][j] == 2) {
                 tweet.href += "⬛";
-                result_row += "⬛";
+                var tile = document.createElement("div");
+                tile.className = "mini-tile";
+                tile.style = "background: GREY";
+                result_row.after(tile);
+                result_row = tile;
             }
+            var br = document.createElement("br");
+            result_row.after(br);
+            result_row = br;
         }
         tweet.href += "%0a";
-        var result_p = document.createElement("p");
-        result_p.innerHTML = result_row;
-        result_text.after(result_p);
-        result_text = result_p;
     }
     var br = document.createElement("br");
     result_text.after(br);
