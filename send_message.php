@@ -51,15 +51,15 @@
         
         <!-- サイドメニュー -->
         <input type="checkbox" id="navTgl" class="trigger">
-            <label for="navTgl" class="open"><span><div class="notification-badge-large" style="display:none"></div></span></label>
-            <label for="navTgl" class="close"></label>
-            <nav class="menu">
-                <h2>menu</h2>
-                <ul>
-                    <li><a href="index.php">プレイ画面</a></li>
-                    <li><a href="how_to_use.php">遊び方</a></li>
-                    <li><a href="inquiry.php">お問い合わせ</a></li>
-                </ul>
-            </nav>
+        <label for="navTgl" class="open"><span><div class="notification-badge-large" style="display:none"></div></span></label>
+        <label for="navTgl" class="close"></label>
+        <nav class="menu">
+            <h2>menu</h2>
+            <ul>
+                <li><a href="index.php">プレイ画面</a></li>
+                <li><a href="how_to_use.php">遊び方</a></li>
+                <li><a href="inquiry.php">お問い合わせ</a></li>
+            </ul>
+        </nav>
     </body>
 </html>
