@@ -270,11 +270,11 @@ function showResult() {
                 result_text.after(tile);
                 result_text = tile;
             }
-            var br = document.createElement("br");
-            result_text.after(br);
-            result_text = br;
         }
         tweet.href += "%0a";
+        var br = document.createElement("br");
+        result_text.after(br);
+        result_text = br;
     }
     var br = document.createElement("br");
     result_text.after(br);
