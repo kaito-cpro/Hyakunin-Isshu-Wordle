@@ -245,35 +245,34 @@ function showResult() {
     tweet.href = "https://twitter.com/intent/tweet?text=百人一首Wordle-" + GAME_NUM + "%20%20" + (is_game_over ? "X" : String(result.length)) + "/" + "6%0a%0a";
     var result_text = document.getElementById("result-title");
     for (let i = 0; i < result.length; ++i) {
-        var result_row = "";
         for (let j = 0; j < result[0].length; ++j) {
             if (result[i][j] == 0) {
                 tweet.href += "🟩";
                 var tile = document.createElement("div");
                 tile.className = "mini-tile";
                 tile.style = "background: GREEN";
-                result_row.after(tile);
-                result_row = tile;
+                result_text.after(tile);
+                result_text = tile;
             }
             else if (result[i][j] == 1) {
                 tweet.href += "🟨";
                 var tile = document.createElement("div");
                 tile.className = "mini-tile";
                 tile.style = "background: YELLOW";
-                result_row.after(tile);
-                result_row = tile;
+                result_text.after(tile);
+                result_text = tile;
             }
             else if (result[i][j] == 2) {
                 tweet.href += "⬛";
                 var tile = document.createElement("div");
                 tile.className = "mini-tile";
                 tile.style = "background: GREY";
-                result_row.after(tile);
-                result_row = tile;
+                result_text.after(tile);
+                result_text = tile;
             }
             var br = document.createElement("br");
-            result_row.after(br);
-            result_row = br;
+            result_text.after(br);
+            result_text = br;
         }
         tweet.href += "%0a";
     }
