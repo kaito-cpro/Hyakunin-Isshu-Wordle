@@ -243,7 +243,9 @@ function showResult() {
     document.getElementById("result-title").innerHTML = (is_game_over ? "GAME OVER…" : "Congratulations!");
     var tweet = document.getElementById("tweet");
     tweet.href = "https://twitter.com/intent/tweet?text=百人一首Wordle-" + GAME_NUM + "%20%20" + (is_game_over ? "X" : String(result.length)) + "/" + "6%0a%0a";
-    var result_text = document.getElementById("result-title");
+    var result_title = document.getElementById("result-title");
+    var mini_tile_container = document.createElement("div");
+    mini_tile_container.className = "mini-tile-container";
     for (let i = 0; i < result.length; ++i) {
         for (let j = 0; j < result[0].length; ++j) {
             if (result[i][j] == 0) {
@@ -251,33 +253,30 @@ function showResult() {
                 var tile = document.createElement("div");
                 tile.className = "mini-tile";
                 tile.style = "background: GREEN";
-                result_text.after(tile);
-                result_text = tile;
+                mini_tile_container.appendChild(tile);
             }
             else if (result[i][j] == 1) {
                 tweet.href += "🟨";
                 var tile = document.createElement("div");
                 tile.className = "mini-tile";
                 tile.style = "background: YELLOW";
-                result_text.after(tile);
-                result_text = tile;
+                mini_tile_container.appendChild(tile);
             }
             else if (result[i][j] == 2) {
                 tweet.href += "⬛";
                 var tile = document.createElement("div");
                 tile.className = "mini-tile";
                 tile.style = "background: GREY";
-                result_text.after(tile);
-                result_text = tile;
+                mini_tile_container.appendChild(tile);
             }
         }
         tweet.href += "%0a";
         var br = document.createElement("br");
-        result_text.after(br);
-        result_text = br;
+        mini_tile_container.appendChild(br);
     }
+    result_title.after(mini_tile_container);
     var br = document.createElement("br");
-    result_text.after(br);
+    mini_tile_container.after(br);
     tweet.href += "&url=https://hyakunin-isshu-wordle.herokuapp.com/%0a&hashtags=百人一首Wordle";
     setTimeout(function() {
         var result_trigger = document.getElementById("result-trigger");

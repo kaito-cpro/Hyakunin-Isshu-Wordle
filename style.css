@@ -548,9 +548,12 @@ hr {
 	background: #0194ff;
 }
 
+.mini-tail-container {
+    padding-left: calc(50% - 87px);
+}
 .mini-tile {
     display: inline-block;
-    width: 12px;
-    height: 12px;
+    width: 30px;
+    height: 30px;
     margin: 2px 2px 2px 2px;
 }
