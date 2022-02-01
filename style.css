@@ -550,7 +550,7 @@ hr {
 
 .mini-tile {
     display: inline-block;
-    width: 6px;
-    height: 6px;
-    margin: 1px 1px 1px 1px;
+    width: 12px;
+    height: 12px;
+    margin: 2px 2px 2px 2px;
 }
