@@ -36,7 +36,7 @@ var seed = date.getYear() + date.getMonth() + date.getDay();
 var random = new Random(seed);
 
 var init_date = new Date(2022, 0, 31);  // ゲーム公開日の 1 日前
-var GAME_NUM = parseInt((date-init_date) / 8640000);  // 何回目の Wordle か
+var GAME_NUM = parseInt((date-init_date) / 86400000);  // 何回目の Wordle か
 
 var TARGET_CARD = cards[random.nextInt(0, cards.length - 1)];
 
