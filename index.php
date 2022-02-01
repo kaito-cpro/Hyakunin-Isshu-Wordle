@@ -27,7 +27,7 @@
     </head>
     <body onload="brython(); createGameBoard(); createKeyboard();">
         <header>
-            <h1>百人一首 WORDLE</h1>
+            <h1>百人一首WORDLE</h1>
         </header>
         
         <div class="game-container">

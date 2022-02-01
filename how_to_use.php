@@ -26,7 +26,7 @@
     </head>
     <body onload="brython();">
         <header>
-            <h1>百人一首 WORDLE</h1>
+            <h1>百人一首WORDLE</h1>
         </header>
         
         <br>
