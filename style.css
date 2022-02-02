@@ -562,8 +562,8 @@ hr {
     position: fixed;
     right: 100px;
     top: 50px;
-    width: 120px;
-    height: 40px;
+    width: 10px;
+    height: 30px;
     padding: 20px;
     background: #666;
     border-radius: 8px;
@@ -588,5 +588,5 @@ hr {
     transform-origin: calc(100% - 100px), calc(100% - 100px);
 }
 .balloon p {
-    line-height: 10px;
+    line-height: 5px;
 }
