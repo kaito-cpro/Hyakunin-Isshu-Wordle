@@ -378,4 +378,8 @@ function showHowToUse() {
     var balloon_edge = document.getElementById("balloon-edge");
     balloon_edge.style.display = "";
     balloon_edge.style.transform = "scale(1.2) rotate(220deg)";
+    setTimeout(function() {
+        balloon.style.display = "none";
+        balloon_edge.style.display = "none";
+    }, 2000)
 }
