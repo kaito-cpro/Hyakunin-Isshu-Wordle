@@ -42,12 +42,7 @@
         
         <div class="keyboard-container">
         </div>
-        
-        <div class="balloon" id="balloon" style="display: none">
-           <p>遊び方はこちら</p>
-        </div>
-        <div class="balloon-edge" id="balloon-edge" style="display: none"></div>
-             
+                     
         <div class="mordal" style="display: none" id="mordal">
             <p></p>
         </div>
