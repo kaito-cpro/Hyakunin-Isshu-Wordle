@@ -387,3 +387,18 @@ function showHowToUse() {
         balloon_edge.style.display = "none";
     }, 3000)
 }
+
+function debug() {
+    var balloon = document.getElementById("balloon");
+    balloon.style.display = "";
+    balloon.style.transform = "scale(1.2)";
+    var balloon_edge = document.getElementById("balloon-edge");
+    balloon_edge.style.display = "";
+    balloon_edge.style.transform = "scale(1.2) rotate(220deg)";
+    
+    document.cookie = "access_record=1; max-age=2147483647";
+    setTimeout(function() {
+        balloon.style.display = "none";
+        balloon_edge.style.display = "none";
+    }, 3000)
+}

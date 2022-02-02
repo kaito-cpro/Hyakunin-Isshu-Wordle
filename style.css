@@ -560,7 +560,7 @@ hr {
 
 .balloon {
     position: fixed;
-    right: 80px;
+    right: 60px;
     top: 80px;
     width: 120px;
     height: 30px;
@@ -576,7 +576,7 @@ hr {
     position: fixed;
     margin: 0;
     top: 55px;
-    right: 85px;
+    right: 65px;
     width: 0;
     height: 0;
     border-top: 40px solid #666;
