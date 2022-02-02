@@ -569,10 +569,19 @@ hr {
     border-radius: 8px;
     color: #fff;
     text-align: center;
-  　z-index: 10;
-    transition: 1s;
+    z-index: 10;
+    animation: zoom-in-balloon 0.9s forwards;
 }
-.balloon-edge{
+@keyframes zoom-in-balloon {
+    0% {
+        transform: scale(1);
+    }
+  
+    100% {
+        transform: scale(1.2);
+    }
+}  
+.balloon-edge {
     position: fixed;
     margin: 0;
     top: 55px;
@@ -584,9 +593,19 @@ hr {
     border-right: 12px solid transparent;
     transform: rotate(220deg);
     z-index: 10;
-    transition: 1s;
-    transform-origin: calc(100% - 100px), calc(100% - 100px);
+    animation: zoom-in-balloon-edge 0.9s forwards;
 }
-.balloon p {
+@keyframes zoom-in-balloon-edge {
+    0% {
+        transform-origin: calc(100% -500px), calc(100% -500px);
+        transform: scale(1) rotate(220deg);
+    }
+    
+    100% {
+        transform-origin: calc(100% -500px), calc(100% -500px);
+        transform: scale(1.6) rotate(220deg) translateX(-2px);
+    }
+}  
+  .balloon p {
     line-height: 5px;
 }
