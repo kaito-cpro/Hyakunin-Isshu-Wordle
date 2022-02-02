@@ -32,7 +32,7 @@
         <script type="text/javascript" src="js/main.js"></script>
         <script type="text/javascript" src="js/loading.js"></script>
     </head>
-    <body onload="brython(); createGameBoard(); createKeyboard();">
+    <body onload="brython(); createGameBoard(); createKeyboard(); showHowToUse();">
         <header>
             <h1>百人一首WORDLE</h1>
         </header>
@@ -43,6 +43,11 @@
         <div class="keyboard-container">
         </div>
         
+        <div class="balloon" id="balloon" style="display: none">
+           <p>遊び方はこちら</p>
+        </div>
+        <div class="balloon-edge" id="balloon-edge" style="display: none"></div>
+             
         <div class="mordal" style="display: none" id="mordal">
             <p></p>
         </div>

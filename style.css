@@ -557,3 +557,36 @@ hr {
     height: 22px;
     margin: 2px 2px 2px 2px;
 }
+
+.balloon {
+    position: fixed;
+    right: 100px;
+    top: 50px;
+    width: 120px;
+    height: 40px;
+    padding: 20px;
+    background: #666;
+    border-radius: 8px;
+    color: #fff;
+    text-align: center;
+  　z-index: 10;
+    transition: 1s;
+}
+.balloon-edge{
+    position: fixed;
+    margin: 0;
+    top: 25px;
+    right: 105px;
+    width: 0;
+    height: 0;
+    border-top: 40px solid #666;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    transform: rotate(220deg);
+    z-index: 10;
+    transition: 1s;
+    transform-origin: calc(100% - 100px), calc(100% - 100px);
+}
+.balloon p {
+    line-height: 10px;
+}
