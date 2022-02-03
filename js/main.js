@@ -371,7 +371,7 @@ function updateKeyboardCharacter(ch, state) {
 }
 
 function showHowToUse() {
-    // if (document.cookie.indexOf("access_record") != -1) return;    
+    if (document.cookie.indexOf("access_record") != -1) return;    
     var balloon = document.createElement("div");
     balloon.className = "balloon";
     balloon.id = "balloon";
