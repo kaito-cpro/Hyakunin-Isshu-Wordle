@@ -393,5 +393,5 @@ function showHowToUse() {
         var balloon_edge = document.getElementById("balloon-edge");
         balloon.style.display = "none";
         balloon_edge.style.display = "none";
-    }, 2300)
+    }, 2600)
 }
