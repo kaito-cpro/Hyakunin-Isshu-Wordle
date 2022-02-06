@@ -69,7 +69,7 @@
                 <label for="popup1-trigger" class="popup_trigger"></label>
                 <div id="popup1-content" class="popup_content">
                     <h1 style="text-align: center; margin-bottom: 8px;">アップデート通知</h1>
-                    <p>難易度調整のため、以下の2点についてアップデートを行いました。</p>
+                    <p>難易度調整のため、以下のアップデートを行いました。</p>
                     <br>
                     <p>・制限時間を5分に設定</p>
                     <p>・回答を5回までに制限</p>
