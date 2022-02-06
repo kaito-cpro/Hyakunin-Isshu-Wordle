@@ -19,7 +19,7 @@
                        maximum-scale=2.0,
                        user-scalable=yes" />
         <meta name="keywords" content="百人一首,Wordle,競技かるた" />
-        <link rel="stylesheet" href="style.css?202202061618" />
+        <link rel="stylesheet" href="style.css?202202061623" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.8/brython.js" integrity="sha256-rA89wPrTJJQFWJaZveKW8jpdmC3t5F9rRkPyBjz8G04=" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
