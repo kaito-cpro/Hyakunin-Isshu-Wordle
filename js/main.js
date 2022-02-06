@@ -354,8 +354,10 @@ function showResult() {
     mini_tile_container.after(br);
     tweet.href += "&url=https://hyakunin-isshu-wordle.herokuapp.com/%0a&hashtags=百人一首Wordle";
     
-    var result_trigger = document.getElementById("result-trigger");
-    result_trigger.checked = "checked";
+    setTimeout(function() {
+        var result_trigger = document.getElementById("result-trigger");
+        result_trigger.checked = "checked";        
+    }, (!is_time_over ? 2500 : 0));
 }
 
 function judge() {
@@ -410,11 +412,9 @@ function judge() {
     
     if (is_correct) {
         stopTimer();
-        setTimeout(showResult(), 2500);
     }
     else if (result.length == MAX_TURN) {
         is_game_over = true;
-        setTimeout(showResult(), 2500);
     }
 }
 
