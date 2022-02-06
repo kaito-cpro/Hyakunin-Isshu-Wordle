@@ -188,7 +188,7 @@ var is_time_over = false;
 function startTimer() {
     timer_id = setInterval(countDown, 1000);
     
-    var time = 300 - 1;
+    var time = 10 - 1;
     var min = 0;
     var sec = 0;
     var timer = document.getElementById("timer");
@@ -213,7 +213,7 @@ function startTimer() {
             timer.innerHTML = "00:00";
             stopTimer();
             is_time_over = true;
-            showResult();
+            if (!is_game_over) showResult();
         }
     }
 }
@@ -314,7 +314,7 @@ function showResult() {
     
     var result_time = document.createElement("p");
     result_time.id = "result-time";
-    result_time.innerHTML = "タイム:　" + time_string;
+    result_time.innerHTML = "タイム:　" + (!is_game_over ? time_string : "time over");
     result_time.style = "margin-bottom: 10px";
     result_title.after(result_time);
     
