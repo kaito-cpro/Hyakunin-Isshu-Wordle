@@ -58,9 +58,9 @@
                 <div id="result-content" class="popup_content">
                     <h1 id="result-title" style="text-align: center"></h1>
                     <a id="tweet" style="margin-left: 55%" target="_blank" rel="noopener noreferrer">結果をツイート</a>
+                    <label for="result-trigger" class="close_btn">×</label>
                 </div>
-                <label for="result-trigger" class="close_btn">×</label>
-            </div>
+            </div>        
         </div>        
         
         <div id="popup1" class="popup_wrap">    
@@ -75,8 +75,9 @@
                     <p>・回答を5回までに制限</p>
                     <br>
                     <p>今後とも百人一首Wordleをよろしくお願いいたします。</p>
-                <label for="popup1-trigger" class="close_btn">×</label>
-            </div>
+                    <label for="popup1-trigger" class="close_btn">×</label>
+                </div>
+            </div>        
         </div>        
         
         <br>
