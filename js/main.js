@@ -303,8 +303,8 @@ var result = [];
 function showResult() {
     stopTimer();
     is_ended = true;
-    if (is_time_over) document.getElementById("result-title").innerHTML = "TIME OVER";
-    else if (is_game_over) document.getElementById("result-title").innerHTML = "GAME OVER";
+    if (is_time_over) document.getElementById("result-title").innerHTML = "TIME OVER…";
+    else if (is_game_over) document.getElementById("result-title").innerHTML = "GAME OVER…";
     else document.getElementById("result-title").innerHTML = "Congratulations!";
     
     var tweet = document.getElementById("tweet");
