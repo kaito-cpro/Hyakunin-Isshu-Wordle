@@ -29,7 +29,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.8/brython.js" integrity="sha256-rA89wPrTJJQFWJaZveKW8jpdmC3t5F9rRkPyBjz8G04=" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-        <script type="text/javascript" src="js/main.js?202202061702"></script>
+        <script type="text/javascript" src="js/main.js?202202061708"></script>
         <script type="text/javascript" src="js/loading.js"></script>
     </head>
     <body onload="brython(); createGameBoard(); createKeyboard(); showHowToUse(); showPopup();">

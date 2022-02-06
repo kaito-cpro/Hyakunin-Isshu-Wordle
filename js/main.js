@@ -188,7 +188,7 @@ var is_time_over = false;
 function startTimer() {
     timer_id = setInterval(countDown, 1000);
     
-    var time = 10 - 1;
+    var time = 300 - 1;
     var min = 0;
     var sec = 0;
     var timer = document.getElementById("timer");
