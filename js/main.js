@@ -188,7 +188,7 @@ var is_time_over = false;
 function startTimer() {
     timer_id = setInterval(countDown, 1000);
     
-    var time = 300 - 1;
+    var time = 10 - 1;
     var min = 0;
     var sec = 0;
     var timer = document.getElementById("timer");
@@ -301,6 +301,7 @@ var is_ended = false;
 var result = [];
 
 function showResult() {
+    stopTimer();
     is_ended = true;
     if (is_time_over) document.getElementById("result-title").innerHTML = "TIME OVER";
     else if (is_game_over) document.getElementById("result-title").innerHTML = "GAME OVER";
@@ -314,7 +315,7 @@ function showResult() {
     
     var result_time = document.createElement("p");
     result_time.id = "result-time";
-    result_time.innerHTML = "タイム:　" + (!is_game_over ? time_string : "time over");
+    result_time.innerHTML = "タイム:　" + ((is_game_over || is_time_over) ? "-----" : time_string);
     result_time.style = "margin-bottom: 10px";
     result_title.after(result_time);
     
@@ -357,7 +358,7 @@ function showResult() {
     setTimeout(function() {
         var result_trigger = document.getElementById("result-trigger");
         result_trigger.checked = "checked";        
-    }, (!is_time_over ? 2500 : 0));
+    }, (!is_time_over ? 2500 : 1400));
 }
 
 function judge() {
@@ -409,7 +410,7 @@ function judge() {
         tile.children[1].style.transform = "rotateX(-180deg)";
     }
     judged[x - 1] = true;
-    
+        
     if (is_correct) {
         stopTimer();
         showResult();
