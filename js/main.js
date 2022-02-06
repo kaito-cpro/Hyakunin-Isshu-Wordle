@@ -1,11 +1,12 @@
-var MAX_TURN = 6;
+var MAX_TURN = 5;
 
 var GREEN = "#2cc258ab";
 var YELLOW = "#ecc72294";
 var GRAY = "#a3a2a287";
 
 var cards = ["あきかぜに", "あきのたの", "あけぬれば", "あさぢふの", "あさぼらけ", "あしびきの", "あはぢしま", "あはれとも", "あひみての", "あふことの", "あまつかぜ", "あまのはら", "あらざらむ", "あらしふく", "ありあけの", "ありまやま", "いにしへの", "いまこむと", "いまはただ", "うかりける", "うらみわび", "おくやまに", "おとにきく", "おほえやま", "おほけなく", "おもひわび", "をぐらやま", "かくとだに", "かささぎの", "かぜそよぐ",  "きみがため", "きりぎりす", "こころにも", "こぬひとを", "このたびは", "こひすてふ", "これやこの", "さびしさに", "しのぶれど", "しらつゆに", "すみのえの", "せをはやみ", "たかさごの", "たちわかれ", "たまのをよ", "たれをかも", "ちぎりきな", "ちはやぶる", "つきみれば", "つくばねの", "ながからむ", "ながらへば", "なげきつつ", "なげけとて", "なつのよは", "なにはえの", "なにはがた", "はなさそふ", "はるすぎて", "はるのよの", "ひさかたの", "ひとはいさ", "ひともをし", "ふくからに", "ほととぎす", "みかきもり", "みかのはら", "みせばやな", "みちのくの", "みよしのの", "むらさめの", "ももしきや", "もろともに", "やすらはで", "やへむぐら", "やまがはに", "やまざとは", "ゆふされば", "ゆらのとを", "よのなかは", "よのなかよ", "よもすがら", "よをこめて", "わがいほは", "わがそでは", "わすらるる", "わすれじの", "わたのはら", "わびぬれば"]
-
+// var cards = ["あきかせに", "あきのたの", "あけぬれは", "あさちふの", "あさほらけ", "あしひきの", "あはちしま", "あはれとも", "あひみての", "あふことの", "あまつかせ", "あまのはら", "あらさらむ", "あらしふく", "ありあけの", "ありまやま", "いにしへの", "いまこむと", "いまはたた", "うかりける", "うらみわひ", "おくやまに", "おとにきく", "おほえやま", "おほけなく", "おもひわひ", "をくらやま", "かくとたに", "かささきの", "かせそよく",  "きみかため", "きりきりす", "こころにも", "こぬひとを", "このたひは", "こひすてふ", "これやこの", "さひしさに", "しのふれと", "しらつゆに", "すみのえの", "せをはやみ", "たかさこの", "たちわかれ", "たまのをよ", "たれをかも", "ちきりきな", "ちはやふる", "つきみれは", "つくはねの", "なかからむ", "なからへは", "なけきつつ", "なけけとて", "なつのよは", "なにはえの", "なにはかた", "はなさそふ", "はるすきて", "はるのよの", "ひさかたの", "ひとはいさ", "ひともをし", "ふくからに", "ほとときす", "みかきもり", "みかのはら", "みせはやな", "みちのくの", "みよしのの", "むらさめの", "ももしきや", "もろともに", "やすらはて", "やへむくら", "やまかはに", "やまさとは", "ゆふされは", "ゆらのとを", "よのなかは", "よのなかよ", "よもすから", "よをこめて", "わかいほは", "わかそては", "わすらるる", "わすれしの", "わたのはら", "わひぬれは"]
+  
 class Random {
     constructor(seed = 88675123) {
         this.x = 123456789;
@@ -181,6 +182,58 @@ function createKeyboard() {
     document.body.getElementsByClassName("keyboard-container")[0].appendChild(tile);
 }
 
+var timer_id;
+var is_time_over = false;
+
+function startTimer() {
+    timer_id = setInterval(countDown, 1000);
+    
+    var time = 300 - 1;
+    var min = 0;
+    var sec = 0;
+    var timer = document.getElementById("timer");
+    timer.innerHTML = "05:00";
+
+    function countDown() {
+        if (time > 0) {
+            var min = Math.floor(time / 60);
+            var sec = time % 60;
+            time--;
+
+            if (sec >= 0 && sec < 10) {
+                timer.innerHTML = "0" + min + ":0" + sec;
+            } else {
+                timer.innerHTML = "0" + min + ":" + sec;
+            }
+            
+            if (min == 0 && sec <= 30) {
+                timer.style.color = "red";
+            }
+        } else if (time == 0) {
+            timer.innerHTML = "00:00";
+            stopTimer();
+            is_time_over = true;
+            showResult();
+        }
+    }
+}
+
+function stopTimer() {
+    clearInterval(timer_id);
+    is_ended = true;
+}
+
+function calcRemainingTime(time_string) {
+    if (time_string == "00:00") return "-----";
+    var min = 5 - parseInt(time_string.substr(0, 2)) - 1;
+    var sec = 60 - parseInt(time_string.substr(3, 2));
+    if(sec == 60) {
+        min++;
+        sec = 0;
+    }
+    return "0" + min + ":" + (0 <= sec && sec <= 9 ? "0" : "") + sec;
+}
+
 var x = 0, y = 0;
 
 function movePos(step) {
@@ -189,8 +242,15 @@ function movePos(step) {
     y = (y + 5555) % 5;
 }
 
+var is_start = false;
+
 function put(ch) {
+    if (is_ended) return;
     if (x >= 1 && !judged[x - 1]) return;
+    if (!is_start) {
+        is_start = true;
+        startTimer();
+    }
     var tile = document.getElementById("game-tile"+String(x)+"-"+String(y));
     tile.children[0].children[0].innerHTML = ch;
     tile.children[1].children[0].innerHTML = ch;
@@ -202,6 +262,7 @@ var judged = [];
 for (let j = 0; j < MAX_TURN; ++j) judged.push(false);
 
 function erase() {
+    if (is_ended) return;
     if (x == 0 && y == 0) return;
     if (y == 0 && judged[x - 1]) return;
     movePos(-1);
@@ -212,6 +273,7 @@ function erase() {
 }
 
 function changeMode() {
+    if (is_ended) return;
     var front_keyboard = document.getElementById("front-keyboard");
     var back_keyboard = document.getElementById("back-keyboard");
     if (keyboard_mode == 0) {
@@ -240,10 +302,22 @@ var result = [];
 
 function showResult() {
     is_ended = true;
-    document.getElementById("result-title").innerHTML = (is_game_over ? "GAME OVER…" : "Congratulations!");
+    if (is_time_over) document.getElementById("result-title").innerHTML = "TIME OVER";
+    else if (is_game_over) document.getElementById("result-title").innerHTML = "GAME OVER";
+    else document.getElementById("result-title").innerHTML = "Congratulations!";
+    
     var tweet = document.getElementById("tweet");
-    tweet.href = "https://twitter.com/intent/tweet?text=百人一首Wordle-" + GAME_NUM + "%20%20" + (is_game_over ? "X" : String(result.length)) + "/" + "6%0a%0a";
+    tweet.href = "https://twitter.com/intent/tweet?text=百人一首Wordle-" + GAME_NUM + "%20%20" + ((is_game_over || is_time_over) ? "X" : String(result.length)) + "/" + String(MAX_TURN);
+    var time_string = calcRemainingTime(document.getElementById("timer").innerHTML);
+    tweet.href += (!is_game_over ? "%20(" + (is_time_over ? "time over" : time_string) + ")" : "") + "%0a%0a";
     var result_title = document.getElementById("result-title");
+    
+    var result_time = document.createElement("p");
+    result_time.id = "result-time";
+    result_time.innerHTML = "タイム:　" + time_string;
+    result_time.style = "margin-bottom: 10px";
+    result_title.after(result_time);
+    
     var mini_tile_container = document.createElement("div");
     mini_tile_container.className = "mini-tile-container";
     for (let i = 0; i < result.length; ++i) {
@@ -274,14 +348,14 @@ function showResult() {
         var br = document.createElement("br");
         mini_tile_container.appendChild(br);
     }
-    result_title.after(mini_tile_container);
+    result_time = document.getElementById("result-time");
+    result_time.after(mini_tile_container);
     var br = document.createElement("br");
     mini_tile_container.after(br);
     tweet.href += "&url=https://hyakunin-isshu-wordle.herokuapp.com/%0a&hashtags=百人一首Wordle";
-    setTimeout(function() {
-        var result_trigger = document.getElementById("result-trigger");
-        result_trigger.checked = "checked";
-    }, 2500);
+    
+    var result_trigger = document.getElementById("result-trigger");
+    result_trigger.checked = "checked";
 }
 
 function judge() {
@@ -334,10 +408,13 @@ function judge() {
     }
     judged[x - 1] = true;
     
-    if (is_correct) showResult();
+    if (is_correct) {
+        stopTimer();
+        setTimeout(showResult(), 2500);
+    }
     else if (result.length == MAX_TURN) {
         is_game_over = true;
-        showResult();
+        setTimeout(showResult(), 2500);
     }
 }
 
@@ -394,4 +471,10 @@ function showHowToUse() {
         balloon.style.display = "none";
         balloon_edge.style.display = "none";
     }, 2600)
+}
+
+function showPopup() {
+    if (document.cookie.indexOf("popup_record") != -1) return;
+    document.getElementById("popup1-trigger").checked = "checked";
+    document.cookie = "popup_record=1; max-age=2147483647";
 }

@@ -20,6 +20,7 @@ h1 {
 }
 
 .game-container {
+	display: inline-block;
     text-align: center;
     margin-top: 5px;
     margin-bottom: 8px;
@@ -608,4 +609,21 @@ hr {
 }  
   .balloon p {
     line-height: 5px;
+}
+
+.timer-container {
+	display: inline-block;
+    border: solid 1px #e43695;
+    width: 70px;
+    height: 40px;
+    vertical-align: top;
+    margin-top: 7px;
+    margin-left: calc(50% - 16px - 127px - 50px);
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 6px;
+}
+.timer-container p {
+	line-height: 4px;
+	font-size: 20px;
 }

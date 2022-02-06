@@ -32,10 +32,14 @@
         <script type="text/javascript" src="js/main.js"></script>
         <script type="text/javascript" src="js/loading.js"></script>
     </head>
-    <body onload="brython(); createGameBoard(); createKeyboard(); showHowToUse();">
+    <body onload="brython(); createGameBoard(); createKeyboard(); showHowToUse(); showPopup();">
         <header>
             <h1>百人一首WORDLE</h1>
         </header>
+        
+        <div class="timer-container">
+            <p id="timer">05:00</p>
+        </div>
         
         <div class="game-container">
         </div>
@@ -54,7 +58,24 @@
                 <div id="result-content" class="popup_content">
                     <h1 id="result-title" style="text-align: center"></h1>
                     <a id="tweet" style="margin-left: 55%" target="_blank" rel="noopener noreferrer">結果をツイート</a>
+                </div>
                 <label for="result-trigger" class="close_btn">×</label>
+            </div>
+        </div>        
+        
+        <div id="popup1" class="popup_wrap">    
+            <input type="checkbox" id="popup1-trigger" class="trigger">
+            <div class="popup_overlay">
+                <label for="popup1-trigger" class="popup_trigger"></label>
+                <div id="popup1-content" class="popup_content">
+                    <h1 style="text-align: center; margin-bottom: 8px;">アップデート通知</h1>
+                    <p>難易度調整のため、以下の2点についてアップデートを行いました。</p>
+                    <br>
+                    <p>・制限時間を5分に設定しました。</p>
+                    <p>・回答を5回までに制限しました。</p>
+                    <br>
+                    <p>今後とも百人一首Wordleをよろしくお願いいたします。</p>
+                <label for="popup1-trigger" class="close_btn">×</label>
             </div>
         </div>        
         
