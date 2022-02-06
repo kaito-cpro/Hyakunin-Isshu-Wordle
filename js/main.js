@@ -412,9 +412,11 @@ function judge() {
     
     if (is_correct) {
         stopTimer();
+        showResult();
     }
     else if (result.length == MAX_TURN) {
         is_game_over = true;
+        showResult();
     }
 }
 
