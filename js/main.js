@@ -478,6 +478,6 @@ function showHowToUse() {
 
 function showPopup() {
     if (document.cookie.indexOf("popup_record") != -1) return;
-    document.getElementById("popup1-trigger").checked = "checked";
+    // document.getElementById("popup1-trigger").checked = "checked";
     document.cookie = "popup_record=1; max-age=2147483647";
 }
