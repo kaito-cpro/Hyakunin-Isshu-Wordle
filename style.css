@@ -549,6 +549,10 @@ hr {
 	background: #0194ff;
 }
 
+.under {
+	background: linear-gradient(transparent 50%, #20b47b 50%);
+}
+
 .mini-tile-container {
     padding-left: calc(50% - 62px);
 }
