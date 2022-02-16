@@ -29,7 +29,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.8/brython.js" integrity="sha256-rA89wPrTJJQFWJaZveKW8jpdmC3t5F9rRkPyBjz8G04=" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-        <script type="text/javascript" src="js/main.js?202202170759"></script>
+        <script type="text/javascript" src="js/main.js?202202170810"></script>
         <script type="text/javascript" src="js/loading.js"></script>
     </head>
     <body onload="brython(); createGameBoard(); createKeyboard(); showHowToUse(); showPopup();">
@@ -194,6 +194,7 @@
                 <div id="result-content" class="popup_content">
                     <h1 id="result-title" style="text-align: center"></h1>
                     <a id="tweet" style="margin-left: 55%" target="_blank" rel="noopener noreferrer">結果をツイート</a>
+                    <br>
                     <label for="result-trigger" class="close_btn">×</label>
                 </div>
             </div>        

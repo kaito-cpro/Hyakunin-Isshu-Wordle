@@ -318,7 +318,7 @@ function showResult() {
     var result_time = document.createElement("p");
     result_time.id = "result-time";
     result_time.innerHTML = "タイム:　" + ((is_game_over || is_time_over) ? "-----" : time_string);
-    result_time.style = "margin-bottom: 10px";
+    result_time.style = "margin-bottom: 10px; text-align: center;";
     result_title.after(result_time);
     
     var mini_tile_container = document.createElement("div");
@@ -353,6 +353,8 @@ function showResult() {
     }
     result_time = document.getElementById("result-time");
     result_time.after(mini_tile_container);
+    var br = document.createElement("br");
+    mini_tile_container.after(br);
     var br = document.createElement("br");
     mini_tile_container.after(br);
     tweet.href += "&url=https://hyakunin-isshu-wordle.herokuapp.com/%0a&hashtags=百人一首Wordle";
