@@ -453,33 +453,16 @@ function updateKeyboardCharacter(ch, state) {
 }
 
 function showHowToUse() {
-    if (document.cookie.indexOf("access_record") != -1) return;    
-    var balloon = document.createElement("div");
-    balloon.className = "balloon";
-    balloon.id = "balloon";
-    var text = document.createElement("p");
-    text.innerHTML = "遊び方はこちら";
-    balloon.appendChild(text);
-    
-    var balloon_edge = document.createElement("div");
-    balloon_edge.className = "balloon-edge";
-    balloon_edge.id = "balloon-edge";
-    
-    document.body.appendChild(balloon);
-    document.body.appendChild(balloon_edge);
-    
-    document.cookie = "access_record=1; max-age=2147483647";
-    
-    setTimeout(function() {
-        var balloon = document.getElementById("balloon");
-        var balloon_edge = document.getElementById("balloon-edge");
-        balloon.style.display = "none";
-        balloon_edge.style.display = "none";
-    }, 2600)
+    if (document.cookie.indexOf("show_how_to_use") != -1) return;
+    document.getElementById("popup-how-to-use-trigger").checked = "checked";
 }
 
 function showPopup() {
     if (document.cookie.indexOf("popup_record") != -1) return;
     // document.getElementById("popup1-trigger").checked = "checked";
     document.cookie = "popup_record=1; max-age=2147483647";
+}
+
+function writeCookie(cookie_name, cookie_value) {
+    document.cookie = cookie_name + "=" + cookie_value + "; max-age=2147483647";
 }

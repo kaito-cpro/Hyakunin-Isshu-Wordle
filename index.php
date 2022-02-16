@@ -25,11 +25,11 @@
         <meta name="twitter:description" content="百人一首の初句の5文字を当てるWordleです" />
         <meta name="twitter:image" content="https://pbs.twimg.com/media/FLvr1K2aQAEq-ci?format=png" />
         <meta name="keywords" content="百人一首,Wordle,競技かるた" />
-        <link rel="stylesheet" href="style.css?202202170707" />
+        <link rel="stylesheet" href="style.css?202202170759" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.8/brython.js" integrity="sha256-rA89wPrTJJQFWJaZveKW8jpdmC3t5F9rRkPyBjz8G04=" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-        <script type="text/javascript" src="js/main.js?202202170707"></script>
+        <script type="text/javascript" src="js/main.js?202202170759"></script>
         <script type="text/javascript" src="js/loading.js"></script>
     </head>
     <body onload="brython(); createGameBoard(); createKeyboard(); showHowToUse(); showPopup();">
@@ -52,7 +52,7 @@
         </div>
         
         <div id="popup-how-to-use" class="popup_wrap">
-            <input type="checkbox" id="popup-how-to-use-trigger" class="trigger" checked="checked">
+            <input type="checkbox" id="popup-how-to-use-trigger" class="trigger" onclick="document.getElementById('popup-how-to-use-display-question-trigger').checked='checked'">
             <div class="popup_overlay">
                 <label for="popup-how-to-use-trigger" class="popup_trigger"></label>
                 <div id="popup-how-to-use-content" class="popup_content" style="width: 95%; max-width: 800px; height: 95%;">
@@ -155,6 +155,34 @@
                         <p>問題は毎日0時に切り替わります。失敗しても1日に何度でもチャレンジできるので、ぜひ楽しんでください！</p>
                         <br>
                     <label for="popup-how-to-use-trigger" class="close_btn">×</label>
+                </div>
+            </div>        
+        </div>
+        
+        <div id="popup-how-to-use-display-question" class="popup_wrap">
+            <input type="checkbox" id="popup-how-to-use-display-question-trigger" class="trigger">
+            <div class="popup_overlay">
+                <label for="popup-how-to-use-display-question-trigger" class="popup_trigger"></label>
+                <div id="popup-how-to-use-display-question-content" class="popup_content" style="width: 320px; height: 150px;">
+                    <br>
+                    <p>「遊び方」を今後も表示しますか？</p>
+                    <br>
+                    <table style="margin: auto;">
+                        <tr>
+                        <td>
+                            <div class="btn-area">
+                                <input type="button" value="表示する" onclick="document.getElementById('popup-how-to-use-display-question-trigger').checked='';">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="btn-area">
+                                <input type="button" value="表示しない" onclick="writeCookie('show_how_to_use', '0'); document.getElementById('popup-how-to-use-display-question-trigger').checked='';">
+                            </div>
+                        </td>
+                        </tr>
+                    </table> 
+                    <br>                   
+                    <!-- <label for="popup-how-to-use-display-question-trigger" class="close_btn">×</label> -->
                 </div>
             </div>        
         </div>
