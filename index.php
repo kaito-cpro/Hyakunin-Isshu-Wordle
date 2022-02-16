@@ -23,13 +23,13 @@
         <meta name="twitter:domain" content="hyakunin-isshu-wordle.herokuapp.com" />
         <meta name="twitter:title" content="百人一首Wordle" />
         <meta name="twitter:description" content="百人一首の初句の5文字を当てるWordleです" />
-        <meta name="twitter:image" content="https://drive.google.com/file/d/1N63jvw2i9f-bkBm0dO42XT5GW2bLV_DY/view" />
+        <meta name="twitter:image" content="https://twitter.com/Kaito_cpro/status/1494047037230403586/photo/1" />
         <meta name="keywords" content="百人一首,Wordle,競技かるた" />
         <link rel="stylesheet" href="style.css?202202061624" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.8/brython.js" integrity="sha256-rA89wPrTJJQFWJaZveKW8jpdmC3t5F9rRkPyBjz8G04=" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-        <script type="text/javascript" src="js/main.js?202202170026"></script>
+        <script type="text/javascript" src="js/main.js?202202170540"></script>
         <script type="text/javascript" src="js/loading.js"></script>
     </head>
     <body onload="brython(); createGameBoard(); createKeyboard(); showHowToUse(); showPopup();">
