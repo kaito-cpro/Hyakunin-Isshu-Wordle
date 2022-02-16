@@ -25,11 +25,11 @@
         <meta name="twitter:description" content="百人一首の初句の5文字を当てるWordleです" />
         <meta name="twitter:image" content="https://pbs.twimg.com/media/FLvr1K2aQAEq-ci?format=png" />
         <meta name="keywords" content="百人一首,Wordle,競技かるた" />
-        <link rel="stylesheet" href="style.css?202202061624" />
+        <link rel="stylesheet" href="style.css?202202170707" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.8/brython.js" integrity="sha256-rA89wPrTJJQFWJaZveKW8jpdmC3t5F9rRkPyBjz8G04=" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-        <script type="text/javascript" src="js/main.js?202202170540"></script>
+        <script type="text/javascript" src="js/main.js?202202170707"></script>
         <script type="text/javascript" src="js/loading.js"></script>
     </head>
     <body onload="brython(); createGameBoard(); createKeyboard(); showHowToUse(); showPopup();">
@@ -49,6 +49,114 @@
                      
         <div class="mordal" style="display: none" id="mordal">
             <p></p>
+        </div>
+        
+        <div id="popup-how-to-use" class="popup_wrap">
+            <input type="checkbox" id="popup-how-to-use-trigger" class="trigger" checked="checked">
+            <div class="popup_overlay">
+                <label for="popup-how-to-use-trigger" class="popup_trigger"></label>
+                <div id="popup-how-to-use-content" class="popup_content" style="width: 95%; max-width: 800px; height: 95%;">
+                    <h1 style="text-align: center; margin-bottom: 8px;">遊び方</h1>
+                        <p><span class="under">初句が5文字である百人一首の札</span>を、5回以内(制限時間5分)で当てるゲームです。</p>
+                        <p>回答するときは、百人一首に存在する札を<span class="under">歴史的仮名遣いで入力</span>してください。</p>
+                        <br>
+                        <div class="tile-row">
+                            <div class="game-tile">
+                                <div class="front-tile" style="background: #2cc258ab">
+                                    <p>ち</p>
+                                </div>
+                            </div>
+                            <div class="game-tile">
+                                <div class="front-tile" style="background: #a3a2a287">
+                                    <p>は</p>
+                                </div>
+                            </div>
+                            <div class="game-tile">
+                                <div class="front-tile" style="background: #a3a2a287">
+                                    <p>や</p>
+                                </div>
+                            </div>
+                            <div class="game-tile">
+                                <div class="front-tile" style="background: #a3a2a287">
+                                    <p>ぶ</p>
+                                </div>
+                            </div>
+                            <div class="game-tile">
+                                <div class="front-tile" style="background: #a3a2a287">
+                                    <p>る</p>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <p>この場合、1文字目が「ち」であることは確定で、残りの4文字はどこにも存在しないことを表します。</p>
+                        <br>
+                        
+                        <div class="tile-row">
+                            <div class="game-tile">
+                                <div class="front-tile" style="background: #a3a2a287">
+                                    <p>あ</p>
+                                </div>
+                            </div>
+                            <div class="game-tile">
+                                <div class="front-tile" style="background: #a3a2a287">
+                                    <p>さ</p>
+                                </div>
+                            </div>
+                            <div class="game-tile">
+                                <div class="front-tile" style="background: #a3a2a287">
+                                    <p>ぼ</p>
+                                </div>
+                            </div>
+                            <div class="game-tile">
+                                <div class="front-tile" style="background: #ecc72294">
+                                    <p>ら</p>
+                                </div>
+                            </div>
+                            <div class="game-tile">
+                                <div class="front-tile" style="background: #a3a2a287">
+                                    <p>け</p>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <p>この場合、「ら」が4文字目以外のどこかにあることを表します。</p>
+                        <br>
+                        
+                        <div class="tile-row">
+                            <div class="game-tile">
+                                <div class="front-tile">
+                                    <p>た</p>
+                                </div>
+                            </div>
+                            <div class="game-tile">
+                                <div class="front-tile">
+                                    <p>き</p>
+                                </div>
+                            </div>
+                            <div class="game-tile">
+                                <div class="front-tile">
+                                    <p>の</p>
+                                </div>
+                            </div>
+                            <div class="game-tile">
+                                <div class="front-tile">
+                                    <p>お</p>
+                                </div>
+                            </div>
+                            <div class="game-tile">
+                                <div class="front-tile">
+                                    <p>と</p>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <p>「たきのおとは」は初句が6文字の歌なので、このような回答はできません。</p>
+                        <br>
+                        <p>問題は毎日0時に切り替わります。失敗しても1日に何度でもチャレンジできるので、ぜひ楽しんでください！</p>
+                        <br>
+                    <label for="popup-how-to-use-trigger" class="close_btn">×</label>
+                </div>
+            </div>        
         </div>
         
         <div id="result" class="popup_wrap">
