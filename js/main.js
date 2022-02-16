@@ -33,7 +33,6 @@ class Random {
 
 var japan_standard_time = new Date().toLocaleString({timeZone: "Asia/Tokyo"});
 var date = new Date(japan_standard_time);
-var seed = date.getYear() + date.getMonth() + date.getDay();
 var random = new Random(seed=314);
 
 var init_date = new Date(2022, 0, 31);  // ゲーム公開日の 1 日前
@@ -43,9 +42,6 @@ for (let i = 0; i < GAME_NUM; ++i) {
     random.next();
 }
 var TARGET_CARD = cards[random.nextInt(0, cards.length - 1)];
-
-// アップデートに伴う2月11日の例外処理
-if (GAME_NUM == 11) TARGET_CARD = "つくばねの";
 
 function createGameBoard() {
     for (let i = 0; i < MAX_TURN; ++i) {
