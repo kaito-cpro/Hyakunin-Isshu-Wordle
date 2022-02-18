@@ -152,6 +152,38 @@
                         <br>
                         <p>「たきのおとは」は初句が6文字の歌なので、このような回答はできません。</p>
                         <br>
+                        
+                        <div class="tile-row">
+                            <div class="game-tile">
+                                <div class="front-tile" style="background: #a3a2a287">
+                                    <p>き</p>
+                                </div>
+                            </div>
+                            <div class="game-tile">
+                                <div class="front-tile" style="background: #ecc72294">
+                                    <p>り</p>
+                                </div>
+                            </div>
+                            <div class="game-tile">
+                                <div class="front-tile" style="background: #a3a2a287">
+                                    <p>ぎ</p>
+                                </div>
+                            </div>
+                            <div class="game-tile">
+                                <div class="front-tile" style="background: #ecc72294">
+                                    <p>り</p>
+                                </div>
+                            </div>
+                            <div class="game-tile">
+                                <div class="front-tile" style="background: #a3a2a287">
+                                    <p>す</p>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <p><span class="under">一致判定はマスごとに独立</span>で行われます。よってこの場合、「り」が2, 4文字目以外に何個存在するかという情報はわかりません。(ただし「り」が2文字含まれる札は他に存在しないので、「り」は1文字だけ含まれることになります)</p>
+                        <br>
+                        
                         <p>問題は毎日0時に切り替わります。失敗しても1日に何度でもチャレンジできるので、ぜひ楽しんでください！</p>
                         <br>
                     <label for="popup-how-to-use-trigger" class="close_btn">×</label>

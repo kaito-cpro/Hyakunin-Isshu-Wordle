@@ -38,11 +38,148 @@
             </div>
         </form>
         
-        <div class="dot"></div><p style="padding:4px 0px; margin:1px 6px 1px 6px; line-height:21px;"><a href="https://www.powerlanguage.co.uk/wordle/">Wordle</a>の百人一首版です。5回まで回答することができるので、100首の中で、<span class="under">初句(歌の一番はじめの句)がちょうど5文字であるような歌</span>を当ててください。たとえば「ちはやぶる」は答えの札になり得ますが、「たきのおとは」は初句が6文字なので答えにはなり得ません。また「わたのはら」などは競技かるたでの決まり字は6字ですが、初句は5文字なので問題の答えになり得ることに注意してください。</p>
-        <div class="dot"></div><p style="padding:4px 0px; margin:1px 6px 1px 6px; line-height:21px;">回答するときは、百人一首の中に存在しない「あかさたな」などの5文字は回答することができません。また仮名遣いは<span class="under">歴史的仮名遣いで入力</span>するようにお願いします。</p>
-        <div class="dot"></div><p style="padding:4px 0px; margin:1px 6px 1px 6px; line-height:21px;"><span class="under">制限時間は5分</span>です。百人一首Wordleはその性質上、答えがすぐに絞れてしまうことが多いので、難易度調整のために制限時間を設けています。</p>
-        <div class="dot"></div><p style="padding:4px 0px; margin:1px 6px 1px 6px; line-height:21px;">回答した歌と答えの歌を比較して、場所も音も正しいときには緑色、場所は違うけどどこかにその音があるときには黄色、どこにもその音がないときには灰色で表示されます。</p>
-        <div class="dot"></div><p style="padding:4px 0px; margin:1px 6px 1px 6px; line-height:21px;"><span class="under">問題の答えは0時になると1日ごとに切り替わります</span>。5回以内に正解できなくても1日に何度でも挑戦可能なので、いっぱい楽しんでください!</p>
+        <div class="dot"></div>
+        <p style="padding:4px 0px; margin:1px 6px 1px 6px; line-height:21px;">
+            <a href="https://www.powerlanguage.co.uk/wordle/">Wordle</a>の百人一首版です。100首の中で、<span class="under">初句(歌の一番はじめの句)がちょうど5文字であるような歌</span>を、5回以内(制限時間5分)で当てるゲームです。
+        </p>
+        
+        <div class="dot"></div>
+        <p style="padding:4px 0px; margin:1px 6px 1px 6px; line-height:21px;">
+            回答するときは、百人一首の中に存在する札を<span class="under">歴史的仮名遣いで入力</span>するようにお願いします。
+        </p>
+                
+        <div class="dot"></div>
+        <p style="padding:4px 0px; margin:1px 6px 1px 6px; line-height:21px;">
+            回答した歌と答えの歌を比較して、場所も音も正しいときには緑色、場所は違うけどどこかにその音があるときには黄色、どこにもその音がないときには灰色で表示されます。
+        </p>
+        <br>
+        <div class="tile-row">
+            <div class="game-tile">
+                <div class="front-tile" style="background: #2cc258ab">
+                    <p>ち</p>
+                </div>
+            </div>
+            <div class="game-tile">
+                <div class="front-tile" style="background: #a3a2a287">
+                    <p>は</p>
+                </div>
+            </div>
+            <div class="game-tile">
+                <div class="front-tile" style="background: #a3a2a287">
+                    <p>や</p>
+                </div>
+            </div>
+            <div class="game-tile">
+                <div class="front-tile" style="background: #a3a2a287">
+                    <p>ぶ</p>
+                </div>
+            </div>
+            <div class="game-tile">
+                <div class="front-tile" style="background: #a3a2a287">
+                    <p>る</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <p style="padding:4px 0px; margin:1px 6px 1px 6px; line-height:21px;">この場合、1文字目が「ち」であることは確定で、残りの4文字はどこにも存在しないことを表します。</p>
+        <br>
+        
+        <div class="tile-row">
+            <div class="game-tile">
+                <div class="front-tile" style="background: #a3a2a287">
+                    <p>あ</p>
+                </div>
+            </div>
+            <div class="game-tile">
+                <div class="front-tile" style="background: #a3a2a287">
+                    <p>さ</p>
+                </div>
+            </div>
+            <div class="game-tile">
+                <div class="front-tile" style="background: #a3a2a287">
+                    <p>ぼ</p>
+                </div>
+            </div>
+            <div class="game-tile">
+                <div class="front-tile" style="background: #ecc72294">
+                    <p>ら</p>
+                </div>
+            </div>
+            <div class="game-tile">
+                <div class="front-tile" style="background: #a3a2a287">
+                    <p>け</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <p style="padding:4px 0px; margin:1px 6px 1px 6px; line-height:21px;">この場合、「ら」が4文字目以外のどこかにあることを表します。</p>
+        <br>
+        
+        <div class="tile-row">
+            <div class="game-tile">
+                <div class="front-tile">
+                    <p>た</p>
+                </div>
+            </div>
+            <div class="game-tile">
+                <div class="front-tile">
+                    <p>き</p>
+                </div>
+            </div>
+            <div class="game-tile">
+                <div class="front-tile">
+                    <p>の</p>
+                </div>
+            </div>
+            <div class="game-tile">
+                <div class="front-tile">
+                    <p>お</p>
+                </div>
+            </div>
+            <div class="game-tile">
+                <div class="front-tile">
+                    <p>と</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <p style="padding:4px 0px; margin:1px 6px 1px 6px; line-height:21px;">「たきのおとは」は初句が6文字の歌なので、このような回答はできません。</p>
+        <br>
+        
+        <div class="tile-row">
+            <div class="game-tile">
+                <div class="front-tile" style="background: #a3a2a287">
+                    <p>き</p>
+                </div>
+            </div>
+            <div class="game-tile">
+                <div class="front-tile" style="background: #ecc72294">
+                    <p>り</p>
+                </div>
+            </div>
+            <div class="game-tile">
+                <div class="front-tile" style="background: #a3a2a287">
+                    <p>ぎ</p>
+                </div>
+            </div>
+            <div class="game-tile">
+                <div class="front-tile" style="background: #ecc72294">
+                    <p>り</p>
+                </div>
+            </div>
+            <div class="game-tile">
+                <div class="front-tile" style="background: #a3a2a287">
+                    <p>す</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <p style="padding:4px 0px; margin:1px 6px 1px 6px; line-height:21px;"><span class="under">一致判定はマスごとに独立</span>で行われます。よってこの場合、「り」が2, 4文字目以外に何個存在するかという情報はわかりません。(ただし「り」が2文字含まれる札は他に存在しないので、「り」は1文字だけ含まれることになります)</p>
+        
+        <div class="dot"></div>
+        <p style="padding:4px 0px; margin:1px 6px 1px 6px; line-height:21px;">
+            <span class="under">問題の答えは0時になると1日ごとに切り替わります</span>。5回以内に正解できなくても1日に何度でも挑戦可能なので、いっぱい楽しんでください!
+        </p>
             
         <br>
         <br>
