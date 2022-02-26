@@ -13,6 +13,8 @@ message = '[百人一首Wordle]\n'
 with open('message.txt') as f:
     message += f.read()
 
+print(message)
+
 if len(message) == 1:
     print("<p>1文字以上入力してください。</p>")
     print('''<div class="space"></div>''')
