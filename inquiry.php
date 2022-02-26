@@ -32,13 +32,13 @@
         </header>
         
         <br>
-        <p>ただいま準備中です</p>
-        <p>システムを作成中なので送信されません</p>
         
         <form>
             <div class="inputs">
                 <label class="label">開発者へのメッセージ</label>
                 <br>
+                <p>ただいま準備中です</p>
+                <p>システムの作成中なので、メッセージは送信されません</p>
                 <textarea cols="33" rows="14" id="message" name="message" value=""></textarea>
             </div>
             
