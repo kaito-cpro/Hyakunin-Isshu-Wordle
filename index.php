@@ -261,6 +261,7 @@
             <ul>
                 <li><a href="index.php">プレイ画面</a></li>
                 <li><a href="how_to_use.php">遊び方</a></li>
+                <li><a href="inquiry.php">お問い合わせ</a></li>
             </ul>
         </nav>
     </body>
