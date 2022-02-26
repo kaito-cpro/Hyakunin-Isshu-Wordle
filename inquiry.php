@@ -32,6 +32,8 @@
         </header>
         
         <br>
+        <p>ただいま準備中です</p>
+        <p>システムを作成中なので送信されません</p>
         
         <form>
             <div class="inputs">
