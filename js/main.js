@@ -142,18 +142,18 @@ function createKeyboard() {
     var tile = document.createElement("div");
     tile.className = "keyboard-tile";
     tile.id = "mode-change-tile";
-    tile.style = "width: 56px;";
+    tile.style = "width: 92px;";
     tile.setAttribute("onclick", "changeMode()");
     
     var ch = document.createElement("p");
-    ch.innerHTML = "切替";
+    ch.innerHTML = "濁音切替";
     tile.appendChild(ch);
     
     document.body.getElementsByClassName("keyboard-container")[0].appendChild(tile);
     
     // 余白埋め
     var space = document.createElement("div");
-    space.style = "display:inline-block; width:154px; height:28px";
+    space.style = "display:inline-block; width:118px; height:28px";
     document.body.getElementsByClassName("keyboard-container")[0].appendChild(space);
     
     
