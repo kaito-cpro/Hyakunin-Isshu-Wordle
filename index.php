@@ -23,7 +23,7 @@
         <meta name="twitter:domain" content="hyakunin-isshu-wordle.herokuapp.com" />
         <meta name="twitter:title" content="百人一首Wordle" />
         <meta name="twitter:description" content="百人一首の初句の5文字を当てるWordleです" />
-        <meta name="twitter:image" content="https://pbs.twimg.com/media/FLvr1K2aQAEq-ci?format=png" />
+        <meta name="twitter:image" content="https://www.dropbox.com/s/c390ie4vrjj0dyq/thumbnail.png" />
         <meta name="keywords" content="百人一首,Wordle,競技かるた" />
         <link rel="stylesheet" href="style.css?202202170759" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/brython/3.8.8/brython.js" integrity="sha256-rA89wPrTJJQFWJaZveKW8jpdmC3t5F9rRkPyBjz8G04=" crossorigin="anonymous"></script>
