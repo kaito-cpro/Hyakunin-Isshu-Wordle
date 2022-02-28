@@ -174,7 +174,7 @@
             </div>
         </div>
         <br>
-        <p style="padding:4px 0px; margin:1px 6px 1px 6px; line-height:21px;"><span class="under">一致判定はマスごとに独立</span>で行われるので、この場合、「り」が2, 4文字目以外に何個存在するかという情報はわかりません。(ただし「り」が2文字含まれる札は他に存在しないので、「り」は1文字だけ含まれることになります)</p>
+        <p style="padding:4px 0px; margin:1px 6px 1px 6px; line-height:21px;"><span class="under">一致判定はマスごとに独立</span>で行われるので、この場合、「り」が2, 4文字目以外に何個存在するかという情報はわかりません。(ただし「り」が2文字含まれる札は「きりぎりす」の他に存在しないので、結果的に「り」は1文字だけ含まれることになります)</p>
         
         <div class="dot"></div>
         <p style="padding:4px 0px; margin:1px 6px 1px 6px; line-height:21px;">
